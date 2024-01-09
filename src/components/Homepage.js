@@ -55,7 +55,10 @@ const Homepage = () => {
   useEffect(() => {
     axios
       .get("https://api.noroff.dev/api/v1/online-shop")
-      .then((response) => setProducts(response.data))
+      .then((response) => {
+        console.log("API response:", response.data); // Log the API response
+        setProducts(response.data);
+      })
       .catch((error) => console.error("Error fetching products:", error));
   }, []);
 
@@ -63,10 +66,11 @@ const Homepage = () => {
   const filteredProducts = Array.isArray(products)
     ? products.filter(
         (product) =>
-          product.name &&
-          product.name.toLowerCase().includes(searchTerm.toLowerCase())
+          product.title &&
+          product.title.toLowerCase().includes(searchTerm.toLowerCase())
       )
     : [];
+  console.log("Filtered products:", filteredProducts);
 
   return (
     <div>
@@ -82,7 +86,7 @@ const Homepage = () => {
       <ul>
         {filteredProducts.map((product) => (
           <li key={product.id}>
-            <Link to={`/product/${product.id}`}>{product.name}</Link>
+            <Link to={`/product/${product.id}`}>{product.title}</Link>
           </li>
         ))}
       </ul>

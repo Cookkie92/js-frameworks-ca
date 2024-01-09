@@ -6,10 +6,21 @@ const Header = () => {
   return (
     <header>
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/contact">Contact</Link>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+          {/* Add more navigation items based on your pages */}
+        </ul>
       </nav>
-      {/* Other navigation links can be added here */}
+      <div className="cart-icon">
+        {/* You can add your cart icon here */}
+        {/* For example: <img src="cart-icon.png" alt="Cart" /> */}
+        {/* You can also add a counter for the number of items in the cart */}
+      </div>
     </header>
   );
 };

@@ -1,7 +1,7 @@
 // src/App.js
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import Header from "./components/Header";
 import Homepage from "./components/Homepage";
 import ContactPage from "./components/ContactPage";
 import ProductPage from "./components/ProductPage";
@@ -11,6 +11,7 @@ import CheckoutSuccessPage from "./components/CheckoutSuccessPage";
 function App() {
   return (
     <Router>
+      <Header />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/contact" element={<ContactPage />} />
