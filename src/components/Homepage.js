@@ -85,8 +85,15 @@ const Homepage = () => {
       />
       <ul>
         {filteredProducts.map((product) => (
-          <li key={product.id}>
-            <Link to={`/product/${product.id}`}>{product.title}</Link>
+          <li key={product.id} style={{ marginBottom: "20px" }}>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <img
+                src={product.imageUrl} // Replace 'image_url' with the actual property name for your image URL
+                alt={product.title}
+                style={{ maxWidth: "10%", marginRight: "10px" }}
+              />
+              <Link to={`/product/${product.id}`}>{product.title}</Link>
+            </div>
           </li>
         ))}
       </ul>
