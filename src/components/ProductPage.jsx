@@ -101,19 +101,19 @@
 // export default ProductPage;
 
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import axios from "axios";
+import { useParams } from "react-router-dom"; // Import useParams
 import { useCart } from "../context/CartContext";
-
+import Layout from "./Layout";
 const ProductPage = () => {
-  const { productId } = useParams();
+  const { productId } = useParams(); // Use the useParams hook
   const { addToCart } = useCart();
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
     // Make sure productId is defined before making the request
     if (productId) {
-      console.log("Fetching product with ID:", productId);
+      console.log("Params:", productId); // Log the value of productId
       axios
         .get(`https://api.noroff.dev/api/v1/online-shop/${productId}`)
         .then((response) => {
@@ -121,8 +121,12 @@ const ProductPage = () => {
           setProduct(response.data);
         })
         .catch((error) => console.error("Error fetching product:", error));
+    } else {
+      console.log("No productId found");
     }
   }, [productId]);
+
+  // Rest of the component...
 
   const handleAddToCart = () => {
     if (product) {
@@ -139,13 +143,15 @@ const ProductPage = () => {
   }
 
   return (
-    <div>
-      <h1>{product.title}</h1>
-      <p>{product.description}</p>
-      <img src={product.imageUrl} alt={product.title} />
-      <p>Price: ${product.price}</p>
-      <button onClick={handleAddToCart}>Add to Cart</button>
-    </div>
+    <Layout>
+      <div>
+        <h1>{product.title}</h1>
+        <p>{product.description}</p>
+        <img src={product.imageUrl} alt={product.title} />
+        <p>Price: ${product.price}</p>
+        <button onClick={handleAddToCart}>Add to Cart</button>
+      </div>
+    </Layout>
   );
 };
 
