@@ -107,6 +107,7 @@ import { useCart } from "../context/CartContext";
 import Layout from "./Layout";
 const ProductPage = () => {
   const { productId } = useParams(); // Use the useParams hook
+  console.log("Params:", productId);
   const { addToCart } = useCart();
   const [product, setProduct] = useState(null);
 
@@ -120,7 +121,9 @@ const ProductPage = () => {
           console.log("API response:", response.data);
           setProduct(response.data);
         })
-        .catch((error) => console.error("Error fetching product:", error));
+        .catch((error) => {
+          console.error("Error fetching product:", error);
+        });
     } else {
       console.log("No productId found");
     }
