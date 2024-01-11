@@ -96,7 +96,7 @@ function App() {
           />
           <Route
             key={window.location.pathname}
-            path="/product/:id"
+            path="/product/:productId"
             element={
               <Layout>
                 <ProductPage />

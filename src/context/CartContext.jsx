@@ -1,10 +1,4 @@
-// src/context/CartContext.js
-import React, { createContext, useContext, useReducer } from "react";
-
-// Initial state for the cart
-const initialCartState = {
-  cart: [],
-};
+import React, { createContext, useContext, useReducer, useEffect } from "react";
 
 // Action types
 const ADD_TO_CART = "ADD_TO_CART";
@@ -17,8 +11,10 @@ const cartReducer = (state, action) => {
     case ADD_TO_CART:
       return {
         ...state,
-        cart: [...state.cart, action.payload],
+        cart: [...state.cart, { ...action.payload, id: state.nextId }],
+        nextId: state.nextId + 1,
       };
+
     case REMOVE_FROM_CART:
       return {
         ...state,
@@ -39,7 +35,27 @@ const CartContext = createContext();
 
 // CartProvider component
 const CartProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(cartReducer, initialCartState);
+  // Load cart state from local storage
+  const storedCart = JSON.parse(localStorage.getItem("cart"));
+
+  // Use a function for initialCartState
+  const getInitialCartState = () => ({
+    cart: storedCart || [],
+    nextId: storedCart
+      ? Math.max(...storedCart.map((item) => item.id), 0) + 1
+      : 1,
+  });
+
+  const [state, dispatch] = useReducer(
+    cartReducer,
+    undefined,
+    getInitialCartState
+  );
+
+  // Save cart state to local storage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(state.cart));
+  }, [state.cart]);
 
   const addToCart = (item) => {
     dispatch({ type: ADD_TO_CART, payload: item });
@@ -71,4 +87,4 @@ const useCart = () => {
   return context;
 };
 
-export { CartProvider, useCart };
+export { CartProvider, useCart, CartContext };
