@@ -1,8 +1,9 @@
-// Footer.js
+// Footer.jsx
 import React from "react";
+import { FooterContainer } from "../styles/FooterStyle";
 
 const Footer = () => {
-  return <footer>&copy; 2024 My Online Store</footer>;
+  return <FooterContainer>&copy; 2024 CooKKie</FooterContainer>;
 };
 
 export default Footer;

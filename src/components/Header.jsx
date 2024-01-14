@@ -1,5 +1,3 @@
-// export default Header;
-
 import React from "react";
 import Nav from "./Nav";
 

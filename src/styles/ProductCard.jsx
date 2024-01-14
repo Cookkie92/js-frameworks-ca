@@ -7,6 +7,10 @@ export const CardContainer = styled.div`
   padding: 16px;
   margin: 16px;
   width: 200px;
+  display: flex;
+  flex-direction: column; /* Display items in a column */
+  align-items: center; /* Center items horizontally */
+  text-align: center; /* Center text */
 `;
 
 export const Title = styled.h3`
@@ -41,4 +45,9 @@ export const Image = styled.img`
   height: auto;
   border-radius: 4px;
   margin-bottom: 8px; /* Adjust the margin as needed */
+`;
+
+// Additional style for the bottom section
+export const BottomSection = styled.div`
+  margin-top: auto; /* Push to the bottom of the container */
 `;

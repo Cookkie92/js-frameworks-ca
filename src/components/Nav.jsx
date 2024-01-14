@@ -1,30 +1,25 @@
 // // Nav.js
 // import React from "react";
-// import { Link } from "react-router-dom";
-
-// const Nav = () => {
-//   return (
-//     <nav>
-//       <Link to="/">Home</Link>
-//       <Link to="/contact">Contact</Link>
-//       {/* Add more links as needed */}
-//     </nav>
-//   );
-// };
-
-// export default Nav;
-
-// import React from "react";
-// import { Link } from "react-router-dom";
-// import { NavContainer, NavLinks, CartContainer } from "../styles/NavStyles";
+// import {
+//   NavContainer,
+//   Logo,
+//   LogoLink,
+//   NavLinks,
+//   CartContainer,
+//   StyledLink,
+// } from "../styles/NavStyles";
 // import CartIcon from "./CartIcon";
 
 // const Nav = () => {
 //   return (
 //     <NavContainer>
+//       <Logo>
+//         // <LogoLink to="/">WTB-Cakes.com</LogoLink>
+//         //{" "}
+//       </Logo>
 //       <NavLinks>
-//         <Link to="/">Home</Link>
-//         <Link to="/contact">Contact</Link>
+//         <StyledLink to="/">Home</StyledLink>
+//         <StyledLink to="/contact">Contact</StyledLink>
 //       </NavLinks>
 //       <CartContainer>
 //         <CartIcon />
@@ -38,6 +33,7 @@
 import React from "react";
 import {
   NavContainer,
+  LogoLink,
   NavLinks,
   CartContainer,
   StyledLink,
@@ -47,6 +43,7 @@ import CartIcon from "./CartIcon";
 const Nav = () => {
   return (
     <NavContainer>
+      <LogoLink to="/">WTB-Cakes.com</LogoLink>
       <NavLinks>
         <StyledLink to="/">Home</StyledLink>
         <StyledLink to="/contact">Contact</StyledLink>

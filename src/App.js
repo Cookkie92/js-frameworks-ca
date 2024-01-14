@@ -68,15 +68,13 @@ import ContactPage from "./components/ContactPage";
 import ProductPage from "./components/ProductPage";
 import CheckoutPage from "./components/CheckoutPage";
 import CheckoutSuccessPage from "./components/CheckoutSuccessPage";
-import { CartProvider } from "./context/CartContext"; // Import CartProvider
-// import Product from "./components/Product";
+import { CartProvider } from "./context/CartContext";
 
 function App() {
   return (
     <Router>
       <CartProvider>
         {" "}
-        {/* Wrap your Routes with CartProvider */}
         <Routes>
           <Route
             path="/"
