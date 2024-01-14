@@ -7,7 +7,9 @@ export const HomePageContainer = styled.div`
   margin: 0 auto;
   padding: 20px;
 `;
-
+export const ProductsTitle = styled.h1`
+  text-align: center;
+`;
 export const ProductGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

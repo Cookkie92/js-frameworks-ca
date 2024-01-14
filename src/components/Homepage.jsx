@@ -32,6 +32,7 @@ const Homepage = () => {
 
   return (
     <HomePageContainer>
+      <h1>Products</h1>
       <SearchContainer>
         <SearchInput
           type="text"
