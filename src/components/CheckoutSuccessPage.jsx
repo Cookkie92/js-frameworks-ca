@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 const CheckoutSuccessPage = () => {
   const { clearCart } = useCart();
 
-  // Assuming you have an order confirmation message
   return (
     <div>
       <h1>Order Successful!</h1>

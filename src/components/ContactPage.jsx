@@ -28,8 +28,6 @@ const ContactPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Add your validation logic here before submitting
-
     console.log("Form data submitted:", formData);
   };
 

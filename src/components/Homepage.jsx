@@ -19,8 +19,6 @@ const Homepage = () => {
     axios
       .get("https://api.noroff.dev/api/v1/online-shop")
       .then((response) => {
-        // Log the products to the console
-        console.log("Fetched products:", response.data);
         setProducts(response.data);
       })
       .catch((error) => console.error("Error fetching products:", error));

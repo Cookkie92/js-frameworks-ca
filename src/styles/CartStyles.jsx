@@ -2,32 +2,27 @@
 import styled from "styled-components";
 
 export const CheckoutPageContainer = styled.div`
-  /* Add your container styles here */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 50px; /* Adjust margin as needed */
+  margin-top: 50px;
 `;
 
-export const CheckoutPageTitle = styled.h1`
-  /* Add your title styles here */
-`;
+export const CheckoutPageTitle = styled.h1``;
 
 export const ProductGrid = styled.div`
-  /* Add your product grid styles here */
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns */
-  gap: 16px; /* Adjust gap as needed */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
 `;
 
 export const CartItemContainer = styled.div`
-  /* Add your cart item container styles here */
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 16px;
-  width: 100%; /* Take up the full width of the grid cell */
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,14 +45,11 @@ export const CartItemBottomSection = styled.div`
 `;
 
 export const CartTotal = styled.p`
-  /* Add your cart total styles here */
-  margin-top: 20px; /* Adjust margin as needed */
+  margin-top: 20px;
 `;
 
 export const CheckoutButton = styled.button`
-  /* Add your checkout button styles here */
-  /* You can add styles for both enabled and disabled states */
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
-  margin-top: 20px; /* Adjust margin as needed */
+  margin-top: 20px;
 `;

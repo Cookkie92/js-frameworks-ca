@@ -54,5 +54,3 @@ export const StyledLink = styled(NavLink)`
     color: red;
   }
 `;
-
-// NavStyles.jsx
